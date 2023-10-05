@@ -5,6 +5,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { routes } from "./Routes";
 import Navbar from "./components/layouts/navbar/Navbar";
 import Landing from "./components/pages/landing/Landing";
+import Sidepanel from "./components/layouts/sidepanel/Sidepanel";
+import "./styles/main.scss";
 
 function App() {
   return (
@@ -13,13 +15,18 @@ function App() {
         <Navbar />
       </div>
       <div className="main-con">
-        <BrowserRouter>
-          <Routes>
-            {routes.map(({ path, component }, index) => (
-              <Route path={path} element={component} key={index} />
-            ))}
-          </Routes>
-        </BrowserRouter>
+        <div className="sidepanel-con">
+          <Sidepanel />
+        </div>
+        <div className="page-view-con">
+          <BrowserRouter>
+            <Routes>
+              {routes.map(({ path, component }, index) => (
+                <Route path={path} element={component} key={index} />
+              ))}
+            </Routes>
+          </BrowserRouter>
+        </div>
       </div>
     </div>
   );

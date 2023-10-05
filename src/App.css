@@ -3,11 +3,25 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 
   .main-con {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    overflow-y: hidden;
+
+    .sidepanel-con {
+      width: 20%;
+      height: calc(100vh - 92px);
+      background: rgba(19, 23, 34, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .page-view-con {
+      width: 70%;
+      height: 100vh;
+    }
   }
 }
