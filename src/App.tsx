@@ -4,6 +4,7 @@ import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { routes } from "./Routes";
 import Navbar from "./components/layouts/navbar/Navbar";
+import Landing from "./components/pages/landing/Landing";
 
 function App() {
   return (

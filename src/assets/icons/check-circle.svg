@@ -1,0 +1,21 @@
+<svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="system-uicons:check-circle-outside" filter="url(#filter0_d_419_8780)">
+<g id="Group">
+<path id="Vector" d="M27.6387 11.2751C25.1682 9.67109 22.2004 9.01589 19.2842 9.43062C16.3679 9.84535 13.7005 11.302 11.775 13.5311C9.84958 15.7603 8.79639 18.6112 8.81019 21.5568C8.824 24.5023 9.90386 27.3433 11.8501 29.5543C13.7963 31.7653 16.4773 33.1969 19.3973 33.5843C22.3173 33.9716 25.2789 33.2886 27.7343 31.6616C30.1897 30.0345 31.973 27.5734 32.7543 24.7333C33.5357 21.8933 33.2623 18.8663 31.9847 16.2122" stroke="#41CB69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M14.9048 19.9761L19.4762 24.5475L31.6667 12.357" stroke="#41CB69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_419_8780" x="-2.71429" y="-2.21429" width="47.4286" height="47.4286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="0.857143" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_419_8780"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="3.42857"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.403922 0 0 0 0 0.329412 0 0 0 0 0.972549 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_419_8780"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_419_8780" result="shape"/>
+</filter>
+</defs>
+</svg>

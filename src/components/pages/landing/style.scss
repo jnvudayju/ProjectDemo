@@ -1,0 +1,91 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+
+
+}
+
+.landing-content {
+    padding: 20px;
+}
+
+.text {
+    font-size: 12px;
+}
+p{
+    font-size: 18px;
+    margin:0;
+    padding:0;
+}
+
+.wallet-con{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1d1e28;
+    margin-top:10px;
+    border-radius: 12px;
+    border: 1px solid #5B42F3;
+    padding:10px;
+    
+}
+.recommended {
+    border:1px solid #6754f8;
+    padding:01px 10px 0px 10px;
+    font-size:12px;
+    border-radius: 40px;
+}
+.confirm-button {
+    margin-top:30px;
+}
+
+.try-text{
+    padding:12px;
+    background-color: #1d1e28;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+
+
+.button-63 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 15px 19px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-63:active,
+.button-63:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .button-63 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
