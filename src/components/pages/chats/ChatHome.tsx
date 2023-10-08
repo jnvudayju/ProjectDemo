@@ -5,6 +5,7 @@ import { chatCardOptions } from "./Constants";
 import ChatCard from "./ChatCard";
 import { useState } from "react";
 import { ReactComponent as PlayIcon } from "../../../assets/icons/paly-icon.svg";
+import ChatQNA from "./ChatQNA";
 
 const ChatHome = () => {
   const [chatInput, setChatInput] = useState<string>("");
@@ -36,6 +37,9 @@ const ChatHome = () => {
                 <div className="btn-text">Aggresive</div>
               </div>
             </div>
+          </div>
+          <div className="chat-qna-con">
+            <ChatQNA/>
           </div>
           <div className="chat-bottom-con">
             <div className="chat-bottom-card-con">
