@@ -1,6 +1,7 @@
 import "./style.scss";
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import HomeImage from "../../../assets/icons/image_363.svg"
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
     <div className="frame">
       <div className="content">
         <div className="first">
-          <h1>Welcome </h1>
+          <img src={HomeImage} className="home-image"/>
         </div>
         <div className="second">
           <h1>Welcome to CryptogradAI</h1>
