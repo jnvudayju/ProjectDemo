@@ -22,11 +22,13 @@
   .modal-content {
     background-color: #22222C;
     color:white;
-    padding: 20px;
+    padding: 50px;
+    margin:20px;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     width:478px;
+
   }
 
   .wallet {
@@ -37,7 +39,15 @@
     align-items: center;
   }
   .wallet-not-detected {
-    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+  }
+  .trust-wallet-logo {
+    height: 134px;
+    width:134px;
   }
   .others {
     margin-top: 40px;
