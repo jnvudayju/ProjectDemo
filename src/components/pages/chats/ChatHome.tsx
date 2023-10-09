@@ -3,12 +3,21 @@ import { ReactComponent as OptionIcon } from "../../../assets/icons/option-butto
 import "./style.scss";
 import { chatCardOptions } from "./Constants";
 import ChatCard from "./ChatCard";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ReactComponent as PlayIcon } from "../../../assets/icons/paly-icon.svg";
 import ChatQNA from "./ChatQNA";
+import { menuOptions } from "./Constants";
+import OptionMenu from "../../shared/optionMenu/OptionMenu";
+import { ApplicationCtx } from "../../../contexts/ApplicationCtx";
 
 const ChatHome = () => {
   const [chatInput, setChatInput] = useState<string>("");
+  const [isOptionMenuClosed, setIsOptionMenuClosed] = useState(true);
+  const { isSideNavOpen, setIsSideNavOpen } = useContext(ApplicationCtx);
+
+  useEffect(() => {
+    setIsSideNavOpen(true);
+  }, []);
 
   return (
     <>
@@ -16,7 +25,11 @@ const ChatHome = () => {
         <div className="chat-subnav-con">
           <div className="h2-white">Trading Strategy</div>
           <div className="chat-option-icon-con">
-            <OptionIcon />
+            <OptionIcon
+              onClick={() => {
+                setIsOptionMenuClosed(!isOptionMenuClosed);
+              }}
+            />
           </div>
         </div>
         <div className="chat-contenet-con">
@@ -39,7 +52,7 @@ const ChatHome = () => {
             </div>
           </div>
           <div className="chat-qna-con">
-            <ChatQNA/>
+            <ChatQNA />
           </div>
           <div className="chat-bottom-con">
             <div className="chat-bottom-card-con">
@@ -59,9 +72,13 @@ const ChatHome = () => {
             </div>
           </div>
         </div>
+        {!isOptionMenuClosed && (
+          <div className="normal-menu-con">
+            <OptionMenu menuOptions={menuOptions} />
+          </div>
+        )}
       </div>
     </>
   );
 };
-
 export default ChatHome;

@@ -1,5 +1,9 @@
-.menu-con {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
+.sidepanel-container {
+  padding: 64px 0px;
+  .menu-con {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
 }

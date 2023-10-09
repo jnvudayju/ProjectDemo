@@ -16,3 +16,24 @@ export const chatCardOptions = [
     subtitle: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
   },
 ];
+
+export const menuOptions: any[] = [
+  {
+    title: "New Chat",
+  },
+  {
+    title: "Show trading style",
+  },
+  {
+    title: "Settings",
+  },
+  {
+    title: "Share",
+  },
+  {
+    title: "Rename",
+  },
+  {
+    title: "Delete",
+  },
+];

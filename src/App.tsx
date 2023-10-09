@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -7,28 +7,39 @@ import Navbar from "./components/layouts/navbar/Navbar";
 import Landing from "./components/pages/landing/Landing";
 import Sidepanel from "./components/layouts/sidepanel/Sidepanel";
 import "./styles/main.scss";
+import { ApplicationCtx } from "./contexts/ApplicationCtx";
 
 function App() {
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   return (
-    <div className="App">
-      <div className="nav-con">
-        <Navbar />
-      </div>
-      <div className="main-con">
-        <div className="sidepanel-con">
-          <Sidepanel />
+    <ApplicationCtx.Provider
+      value={{
+        isSideNavOpen: isSideNavOpen,
+        setIsSideNavOpen: setIsSideNavOpen,
+      }}
+    >
+      <div className="App">
+        <div className="nav-con">
+          <Navbar />
         </div>
-        <div className="page-view-con">
-          <BrowserRouter>
-            <Routes>
-              {routes.map(({ path, component }, index) => (
-                <Route path={path} element={component} key={index} />
-              ))}
-            </Routes>
-          </BrowserRouter>
+        <div className="main-con">
+          {isSideNavOpen && (
+            <div className="sidepanel-con">
+              <Sidepanel />
+            </div>
+          )}
+          <div className="page-view-con">
+            <BrowserRouter>
+              <Routes>
+                {routes.map(({ path, component }, index) => (
+                  <Route path={path} element={component} key={index} />
+                ))}
+              </Routes>
+            </BrowserRouter>
+          </div>
         </div>
       </div>
-    </div>
+    </ApplicationCtx.Provider>
   );
 }
 
