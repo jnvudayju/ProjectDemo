@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   overflow-y: hidden;
+  
 
   .main-con {
     width: 100%;
@@ -20,7 +21,7 @@
       backdrop-filter: blur(10px);
     }
     .page-view-con {
-      width: 70%;
+      width: 80%;
       height: 100vh;
     }
   }
