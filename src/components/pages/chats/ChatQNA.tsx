@@ -1,6 +1,22 @@
 import "./style.scss";
+import ConfirmationModal from "../../shared/confirmatioModal/ConfirmationModal";
+import { useState } from "react";
+
+
 const ChatQNA = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+    const closeModal = () =>{
+        setIsModalOpen(false)
+    };
+    
+    
     return (<>
+        <button onClick={openModal}>Delete</button>
+        {isModalOpen && <ConfirmationModal />}
         <div className="qna-section">
             <div className="user-details">
                 <div className="profile-pic"></div>

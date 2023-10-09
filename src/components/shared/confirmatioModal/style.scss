@@ -1,0 +1,25 @@
+
+.modal-content {
+    text-align: center;
+    border-radius:10px;
+}
+.cross {
+    color:white;
+    width:31%;
+    border-radius:50px;
+    display:flex;
+    justify-content: flex-end;
+    
+
+}
+.modal{
+    display:flex;
+    flex-direction: column;
+
+}
+.cross-logo {
+    padding:4px;
+    border:1px solid gray;
+    background-color: #22222C;
+    border-radius: 50px;
+}
