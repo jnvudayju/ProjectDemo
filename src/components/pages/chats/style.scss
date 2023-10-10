@@ -33,10 +33,17 @@
 
   .chat-contenet-con {
     padding: 20px 78px 60px 30px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 70%;
+    position: relative;
     .chat-top-con {
-      text-align: center;
+      overflow-y: scroll;
+      height: 80%;
+      .chat-bottom-card-con {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
       .chat-button-con {
         display: flex;
         justify-content: space-between;
@@ -47,12 +54,9 @@
       }
     }
     .chat-bottom-con {
-      bottom: 0;
-      .chat-bottom-card-con {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-      }
+      position: absolute;
+      bottom: 50px;
+      width: 90%;
 
       .chat-input-con {
         border-radius: 12px;
@@ -66,6 +70,17 @@
         align-self: stretch;
         display: flex;
         justify-content: space-between;
+        .chat-input-text {
+          background: #131722;
+          color: #fff;
+          font-family: Phantomsans, sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          border: none;
+          width: 100%;
+        }
       }
     }
   }
@@ -93,7 +108,13 @@
   border-radius: 50px;
 }
 .user-name {
-  color: white;
+  color: #fdfdfd;
+  opacity: 0.4;
+  font-family: Phantomsans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .user-details {
   display: flex;
@@ -110,7 +131,7 @@
   background-color: #131722;
   display: flex;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 .cg-logo {
   width: 40px;
@@ -159,4 +180,37 @@
 
 .answer-main-con {
   position: relative;
+  .chatQna-button-con {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    .icon-button-con {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 0.4px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.9;
+      background: #191a21;
+      display: flex;
+      gap: 8px;
+    }
+  }
+}
+
+.stop-button-con {
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid #6754f8;
+  opacity: 0.9;
+  background: #191a21;
+  box-shadow: 2px 4px 10px 2px rgba(157, 110, 252, 0.15);
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
 }

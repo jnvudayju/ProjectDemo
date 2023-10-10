@@ -1,7 +1,7 @@
 .h1-white {
   color: #fff;
   font-family: Phantomsans, sans-serif;
-  font-size: 54px;
+  font-size: 44px;
   font-style: normal;
   font-weight: 700;
   line-height: 112%;
@@ -11,7 +11,7 @@
 .h2-white {
   color: var(--Text, #fdfdfd);
   font-family: Phantomsans, sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -22,18 +22,49 @@
 .h3-white {
   color: #fdfdfd;
   font-family: Phantomsans, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   text-transform: capitalize;
 }
 
+.h3-white-light {
+  color: #fdfdfd;
+  font-family: Phantomsans, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  opacity: 0.8;
+}
+
+.h4-white {
+  color: #fff;
+  text-align: center;
+  font-family: Phantomsans, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.h3-gray {
+  color: #fdfdfd;
+  font-family: Phantomsans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  opacity: 0.5;
+}
+
 .h1-subtext {
   color: #fdfdfd;
   text-align: center;
   font-family: Phantomsans, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -43,7 +74,7 @@
 .h2-subtext {
   color: var(--Text, #fdfdfd);
   font-family: Phantomsans, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -56,10 +87,11 @@
   background: var(--Primary, #5e5aff);
   box-shadow: 2px 4px 10px 2px rgba(157, 110, 252, 0.15);
   display: flex;
-  width: 140px;
+  width: 100px;
   padding: 16px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .secondary-btn {
@@ -69,17 +101,18 @@
   background: #191a21;
   box-shadow: 2px 4px 10px 2px rgba(157, 110, 252, 0.15);
   display: flex;
-  width: 140px;
+  width: 100px;
   padding: 16px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn-text {
   color: #fff;
   text-align: center;
   font-family: Phantomsans, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -99,4 +132,34 @@
 
 .mt-40 {
   margin-top: 40px;
+}
+
+input {
+  --webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+:-webkit-autofill {
+  color: #fff !important;
+}
+
+.loading {
+  font-weight: bold;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
+}
+
+@keyframes l {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
 }
