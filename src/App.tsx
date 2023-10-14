@@ -11,11 +11,14 @@ import { ApplicationCtx } from "./contexts/ApplicationCtx";
 
 function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const [showStopResponding, setShowStopResponding] = useState(false);
   return (
     <ApplicationCtx.Provider
       value={{
         isSideNavOpen: isSideNavOpen,
         setIsSideNavOpen: setIsSideNavOpen,
+        showStopResponding: showStopResponding,
+        setShowStopResponding: setShowStopResponding
       }}
     >
       <div className="App">

@@ -3,7 +3,7 @@ import { ReactComponent as OptionIcon } from "../../../assets/icons/option-butto
 import "./style.scss";
 import { chatCardOptions, dummyqnaList } from "./Constants";
 import ChatCard from "./ChatCard";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ReactComponent as PlayIcon } from "../../../assets/icons/paly-icon.svg";
 import { ReactComponent as StopIcon } from "../../../assets/icons/stop-icon.svg";
 import ChatQNA from "./ChatQNA";
@@ -16,7 +16,8 @@ import { log } from "console";
 const ChatHome = () => {
   const [chatInput, setChatInput] = useState<string>("");
   const [isOptionMenuClosed, setIsOptionMenuClosed] = useState(true);
-  const { isSideNavOpen, setIsSideNavOpen } = useContext(ApplicationCtx);
+  const { isSideNavOpen, setIsSideNavOpen, showStopResponding } =
+    useContext(ApplicationCtx);
   const [inputActive, setInputActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [qnaList, setQnaList] = useState<any[]>(dummyqnaList);
@@ -24,6 +25,8 @@ const ChatHome = () => {
   const [stopResponding, setStopResponding] = useState(false);
   const [currentLink, setCurrentLink] = useState("");
   const [showWelcome, setShowWelcome] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+  const [currentQnaList, setCurrentQnaList] = useState<any[]>([]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -40,34 +43,45 @@ const ChatHome = () => {
   }, []);
 
   useEffect(() => {
+    console.log({ currentQNA });
+
     if (currentQNA.length) {
       setShowWelcome(false);
     } else {
       setShowWelcome(true);
     }
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
   }, [currentQNA]);
 
   const handleSubmit = () => {
+    setCurrentQNA((prevState: any) => {
+      return [...prevState, { ques: chatInput, ans: "" }];
+    });
     if (chatInput.indexOf("https") !== -1) {
-      setCurrentLink(chatInput);
-      setCurrentQNA((prevState: any) => {
-        return [...prevState, { ques: chatInput, ans: "" }];
+      dummyqnaList.forEach((qna: any) => {
+        if (chatInput.indexOf(qna.link) !== -1) {
+          setCurrentQnaList(qna.qna);
+          qna.qna.forEach((qna: any) => {
+            if (chatInput.indexOf(qna.ques) !== -1) {
+              setCurrentQNA((prevState: any) => {
+                return [...prevState, { ques: "", ans: qna.ans }];
+              });
+            }
+          });
+        }
       });
     } else {
-      setCurrentQNA((prevState: any) => {
-        return [...prevState, { ques: chatInput, ans: "" }];
+      currentQnaList.forEach((qna: any) => {
+        if (chatInput.indexOf(qna.ques) !== -1) {
+          setCurrentQNA((prevState: any) => {
+            return [...prevState, { ques: "", ans: qna.ans }];
+          });
+        }
       });
-      const listToFind: any[] =
-        dummyqnaList.find((x) => x.link === currentLink)?.qna || [];
-      const currentAns = listToFind?.find((x) => x.ques === chatInput).ans;
-
-      setTimeout(() => {
-        setCurrentQNA((prevState: any) => {
-          return [...prevState, { ques: "", ans: currentAns }];
-        });
-      }, 3000);
     }
-
     setChatInput("");
     setStopResponding(false);
   };
@@ -119,8 +133,9 @@ const ChatHome = () => {
                 <ChatQNA question={qna?.ques} answer={qna?.ans} />
               ))}
             </div>
-            {stopResponding && (
-              <div className="chat-bottom-card-con mt-40">
+            <div className="mb-60" ref={ref} />
+            {showWelcome && (
+              <div className="chat-bottom-card-con">
                 {chatCardOptions.map((cardOption: any, index: number) => (
                   <ChatCard
                     title={cardOption.title}
@@ -131,10 +146,10 @@ const ChatHome = () => {
               </div>
             )}
           </div>
-          <div className="chat-bottom-con mt-40">
-            {!stopResponding && currentQNA.length && (
+          <div className="chat-bottom-con mt-8">
+            {showStopResponding && (
               <div
-                className="stop-button-con mt-32"
+                className="stop-button-con mt-8"
                 onClick={() => setStopResponding(true)}
               >
                 <StopIcon />
@@ -142,7 +157,7 @@ const ChatHome = () => {
               </div>
             )}
             <div
-              className="chat-input-con mt-32"
+              className="chat-input-con mt-8"
               onClick={() => setInputActive(true)}
             >
               <label style={{ width: "100%" }}>

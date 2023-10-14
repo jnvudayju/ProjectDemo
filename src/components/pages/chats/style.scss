@@ -32,17 +32,18 @@
   }
 
   .chat-contenet-con {
-    padding: 20px 78px 60px 30px;
+    padding: 20px 60px 60px 30px;
     overflow-y: hidden;
     height: 70%;
     position: relative;
     .chat-top-con {
       overflow-y: scroll;
-      height: 80%;
+      height: 85%;
       .chat-bottom-card-con {
         display: flex;
         justify-content: space-between;
         gap: 12px;
+        margin-top: 220px;
       }
       .chat-button-con {
         display: flex;
@@ -56,7 +57,7 @@
     .chat-bottom-con {
       position: absolute;
       bottom: 50px;
-      width: 90%;
+      width: 92%;
 
       .chat-input-con {
         border-radius: 12px;
@@ -136,7 +137,6 @@
 .cg-logo {
   width: 40px;
   height: 40px;
-  border: 1px solid white;
   border-radius: 50px;
 }
 .answer-section {
@@ -194,6 +194,7 @@
       background: #191a21;
       display: flex;
       gap: 8px;
+      cursor: pointer;
     }
   }
 }
